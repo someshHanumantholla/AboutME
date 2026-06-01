@@ -1242,7 +1242,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:Somesh.hanumantholla@gmail.com?subject=Contact%20Somesh">Contact Us</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -1284,7 +1284,7 @@
             Certified Oracle Integration Professional and AI Generalist with over 11+ years of experience. I bridge the gap between traditional ERP solutions (SCM & Finance) and modern AI automation to engineer highly optimized corporate workflows.
           </p>
           <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary">Hire Me / Connect</a>
+            <a href="mailto:Somesh.hanumantholla@gmail.com?subject=Contact%20Somesh" class="btn btn-primary">Contact Us</a>
             <a href="#experience" class="btn btn-secondary">Review Experience</a>
           </div>
           
@@ -1824,8 +1824,18 @@
          STATE & CONFIG
          ---------------------------------------------------- */
       let currentUser = JSON.parse(localStorage.getItem("portfolio_user")) || null;
-      const savedTheme = localStorage.getItem("portfolio_theme") || "dark";
-      document.documentElement.setAttribute("data-theme", savedTheme);
+      const getPreferredTheme = () => {
+        const localTheme = localStorage.getItem("portfolio_theme");
+        if (localTheme) return localTheme;
+        return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      };
+      document.documentElement.setAttribute("data-theme", getPreferredTheme());
+
+      window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+        if (!localStorage.getItem("portfolio_theme")) {
+          document.documentElement.setAttribute("data-theme", e.matches ? "light" : "dark");
+        }
+      });
       document.getElementById("footer-year").innerText = new Date().getFullYear();
 
       // Titles for Typewriter effect
