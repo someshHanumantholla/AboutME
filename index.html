@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somesh Hanumantholla | AI Generalist & ERP Integration Architect</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Somesh Hanumantholla, a Senior AI Generalist & ERP Integration Consultant with over 11 years of experience designing enterprise solutions.">
+  <meta name="keywords" content="Somesh Hanumantholla, AI Generalist, Oracle Integration, ERP Consultant, OIC, Oracle EBS, Redwood migration">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ----------------------------------------------------
+       DESIGN SYSTEM & CSS VARIABLES
+       ---------------------------------------------------- */
+    :root {
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Dark Theme (Default) */
+      --bg-app: #060913;
+      --bg-gradient: radial-gradient(circle at 50% 50%, #0c1426 0%, #060913 100%);
+      --bg-card: rgba(12, 20, 38, 0.6);
+      --bg-nav: rgba(6, 9, 19, 0.8);
+      
+      --text-primary: #f3f4f6;
+      --text-secondary: #a1a8b8;
+      --text-muted: #6b7280;
+      
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(99, 102, 241, 0.6);
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      
+      --primary-hue: 245; /* Electric Indigo */
+      --primary: hsl(var(--primary-hue), 85%, 65%);
+      --primary-glow: hsla(var(--primary-hue), 85%, 65%, 0.15);
+      --secondary-hue: 330; /* Rose Pink */
+      --secondary: hsl(var(--secondary-hue), 85%, 60%);
+      
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+
+      /* Social Auth Colors */
+      --btn-google: #4285f4;
+      --btn-linkedin: #0077b5;
+      --btn-facebook: #1877f2;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-fast: all 0.15s ease;
+    }
+
+    [data-theme="light"] {
+      --bg-app: #f4f6fa;
+      --bg-gradient: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f6fa 100%);
+      --bg-card: rgba(255, 255, 255, 0.7);
+      --bg-nav: rgba(244, 246, 250, 0.85);
+      
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #8b95a5;
+      
+      --border-color: rgba(0, 0, 0, 0.08);
+      --border-focus: rgba(99, 102, 241, 0.8);
+      --shadow-card: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+      
+      --primary: hsl(var(--primary-hue), 75%, 55%);
+      --primary-glow: hsla(var(--primary-hue), 75%, 55%, 0.08);
+      --secondary: hsl(var(--secondary-hue), 75%, 50%);
+    }
+
+    /* ----------------------------------------------------
+       BASE RESET & LAYOUTS
+       ---------------------------------------------------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-app);
+      background-image: var(--bg-gradient);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 50%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      border-radius: 2px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+      max-width: 600px;
+    }
+
+    .glass {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ----------------------------------------------------
+       BUTTON UI
+       ---------------------------------------------------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 14px 0 var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px 0 var(--primary-glow);
+      opacity: 0.95;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border-color);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    /* ----------------------------------------------------
+       HEADER & NAVIGATION
+       ---------------------------------------------------- */
+    .header-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      transition: var(--transition-smooth);
+    }
+
+    .header-nav.scrolled {
+      background: var(--bg-nav);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      height: 70px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* User state triggers */
+    .user-menu {
+      position: relative;
+    }
+
+    .user-profile-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--border-color);
+      padding: 6px 12px 6px 6px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      transition: var(--transition-fast);
+    }
+
+    .user-profile-trigger:hover {
+      border-color: var(--primary);
+    }
+
+    .user-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-color);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 110%;
+      right: 0;
+      width: 200px;
+      padding: 8px;
+      z-index: 110;
+      display: none;
+    }
+
+    .dropdown-menu.active {
+      display: block;
+      animation: fadeInDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--border-color);
+      color: var(--primary);
+    }
+
+    /* Theme toggle */
+    .theme-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .theme-btn .sun-icon { display: none; }
+    [data-theme="light"] .theme-btn .moon-icon { display: none; }
+    [data-theme="light"] .theme-btn .sun-icon { display: block; }
+
+    /* ----------------------------------------------------
+       HERO SECTION
+       ---------------------------------------------------- */
+    .hero-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 140px;
+      gap: 40px;
+      position: relative;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero-hello {
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-name {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      height: 38px;
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      background-color: var(--primary);
+      width: 3px;
+      height: 1.2em;
+      margin-left: 4px;
+      vertical-align: middle;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    .hero-bio {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+    }
+
+    .hero-image-side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .avatar-container {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      padding: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 20px 40px -10px var(--primary-glow);
+    }
+
+    .avatar-container::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: -12px;
+      bottom: -12px;
+      border: 1px dashed var(--primary);
+      border-radius: 50%;
+      animation: spinSlow 30s linear infinite;
+      opacity: 0.4;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--bg-app);
+    }
+
+    /* Stats columns */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .stat-card {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      margin-bottom: 4px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* ----------------------------------------------------
+       ABOUT & SOCIAL LINKS
+       ---------------------------------------------------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--border-color);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .social-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* ----------------------------------------------------
+       SKILLS PROGRESS BARS
+       ---------------------------------------------------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .skill-category {
+      padding: 32px;
+    }
+
+    .skill-category h3 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .skill-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .skill-name {
+      color: var(--text-primary);
+    }
+
+    .skill-percent {
+      color: var(--primary);
+    }
+
+    .skill-bar-bg {
+      height: 8px;
+      background: var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 4px;
+      width: 0; /* Dynamic loading */
+      transition: width 1.5s cubic-bezier(0.1, 0.8, 0.3, 1);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    /* ----------------------------------------------------
+       PROJECTS GRID
+       ---------------------------------------------------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-img-wrapper {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: rgba(0,0,0,0.15);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.08);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(6, 9, 19, 0.9) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-category {
+      font-size: 0.8rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .project-card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .project-tag {
+      font-size: 0.8rem;
+      background: var(--border-color);
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
+
+    .project-link {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ----------------------------------------------------
+       TIMELINE (EXPERIENCE WITHOUT COMPANY NAMES)
+       ---------------------------------------------------- */
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--bg-app);
+      border: 3px solid var(--primary);
+      z-index: 2;
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    .timeline-content {
+      padding: 24px;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-period {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .timeline-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .timeline-bullets {
+      margin-top: 12px;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    .timeline-bullets li {
+      margin-bottom: 6px;
+    }
+
+    /* ----------------------------------------------------
+       CONTACT SECTION
+       ---------------------------------------------------- */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 48px;
+    }
+
+    .contact-info-card {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--border-color);
+      color: var(--primary);
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .contact-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .contact-val {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .contact-form-card {
+      padding: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    textarea.form-input {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    /* ----------------------------------------------------
+       AUTHENTICATION MODAL
+       ---------------------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      width: 100%;
+      max-width: 440px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 36px;
+      position: relative;
+      transform: scale(0.9);
+      transition: var(--transition-smooth);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .modal-close:hover {
+      background: var(--border-color);
+      color: var(--text-primary);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .modal-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .modal-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .social-auth-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn-oauth {
+      width: 100%;
+      color: #fff;
+      font-size: 0.95rem;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .btn-oauth svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .btn-google { background-color: var(--btn-google); }
+    .btn-linkedin { background-color: var(--btn-linkedin); }
+    .btn-facebook { background-color: var(--btn-facebook); }
+
+    .btn-oauth:hover {
+      filter: brightness(0.95);
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin: 20px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .divider:not(:empty)::before { margin-right: .5em; }
+    .divider:not(:empty)::after { margin-left: .5em; }
+
+    .modal-toggle-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .modal-toggle-text span {
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .modal-toggle-text span:hover {
+      text-decoration: underline;
+    }
+
+    /* In-page simulated social login screen */
+    .simulated-oauth-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 0;
+    }
+
+    .oauth-logo-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .oauth-logo-circle svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    .oauth-spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top: 3px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 24px 0;
+    }
+
+    /* ----------------------------------------------------
+       TOAST NOTIFICATION
+       ---------------------------------------------------- */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      color: var(--text-primary);
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transform: translateX(-120%);
+      animation: slideInLeft 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-left: 4px solid var(--primary);
+    }
+
+    .toast.success { border-left-color: var(--accent-green); }
+    .toast.error { border-left-color: var(--accent-red); }
+    
+    .toast.removing {
+      animation: slideOutLeft 0.3s forwards cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    }
+
+    .footer-sec {
+      border-top: 1px solid var(--border-color);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ----------------------------------------------------
+       ANIMATIONS
+       ---------------------------------------------------- */
+    @keyframes blink {
+      from, to { background-color: transparent }
+      50% { background-color: var(--primary) }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      to { transform: translateX(0); }
+    }
+
+    @keyframes slideOutLeft {
+      to {
+        transform: translateX(-150%);
+        opacity: 0;
+      }
+    }
+
+    /* ----------------------------------------------------
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ---------------------------------------------------- */
+    @media (max-width: 992px) {
+      .hero-wrapper {
+        flex-direction: column-reverse;
+        padding-top: 120px;
+        gap: 50px;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .avatar-container {
+        width: 260px;
+        height: 260px;
+      }
+
+      .about-grid,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- STICKY HEADER -->
+  <header id="header-nav" class="header-nav">
+    <div class="container nav-container">
+      <a href="#" class="logo text-gradient">SOMESH.AI</a>
+      
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn btn-secondary btn-icon theme-btn" aria-label="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zm-12.37 12.37c-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41z"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.7 3.3-8.8 8-9.8.5-.1 1 .3.9.8-.1.5-.6.9-1.1.9-3.9.5-6.8 4-6.8 8.1 0 4.4 3.6 8 8 8 3.9 0 7.2-2.8 7.9-6.6.1-.5.6-.9 1.1-.8.5.1.8.6.7 1.1-.9 4.8-5 8.3-9.6 8.3z"/></svg>
+        </button>
+
+        <!-- Auth Status Trigger -->
+        <button id="nav-login-btn" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Login / Signup</button>
+
+        <div id="user-profile-menu" class="user-menu" style="display: none;">
+          <div class="user-profile-trigger">
+            <!-- Rendered in script -->
+          </div>
+          <div id="user-dropdown" class="dropdown-menu glass">
+            <div id="dropdown-logout" class="dropdown-item" style="color: var(--accent-red)">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 021-1h5a1 1 0 010 2H6v12h4a1 1 0 110 2H5a3 3 0 01-3-3V4a3 3 0 013-3h5a1 1 0 110 2H5z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M11.293 8.707a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L13.586 15H9a1 1 0 110-2h4.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span>Sign Out</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="section">
+      <div class="container hero-wrapper">
+        <div class="hero-content">
+          <p class="hero-hello">Pioneering Intelligent Architectures</p>
+          <h1 class="hero-name">Somesh Hanumantholla</h1>
+          <h2 id="hero-title" class="hero-title text-gradient">
+            <span id="hero-title-typed"></span>
+          </h2>
+          <p id="hero-bio" class="hero-bio">
+            Certified Oracle Integration Professional and AI Generalist with over 11+ years of experience. I bridge the gap between traditional ERP solutions (SCM & Finance) and modern AI automation to engineer highly optimized corporate workflows.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">Hire Me / Connect</a>
+            <a href="#experience" class="btn btn-secondary">Review Experience</a>
+          </div>
+          
+          <div class="stats-grid">
+            <div class="stat-card glass">
+              <div class="stat-number">11+ Yrs</div>
+              <div class="stat-label">ERP / Integration Experience</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-number">2x Cert</div>
+              <div class="stat-label">Oracle Professional Credentials</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Integrations & Workflows Built</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-side">
+          <div class="avatar-container">
+            <img id="hero-avatar" class="avatar-img" src="assets/avatar.png" alt="Somesh Hanumantholla" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="subtitle">My background, ERP journey, and transition to AI Generalist.</p>
+        
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am an experienced, certified Oracle Integration Consultant. Throughout my 11+ years in the industry, I have led technical implementation teams, engineered data-migration workflows, and driven business process re-engineering projects across SCM and financial modules.
+            </p>
+            <p>
+              As an <strong>AI Generalist</strong>, I specialize in combining robust ERP backbones with modern intelligence. I construct custom integrations that utilize cognitive models, automated agents, and intelligent data pipelines to transform structured enterprise database environments (Oracle EBS/Cloud) into highly automated, reactive networks.
+            </p>
+            
+            <div class="social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="about-info glass">
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-label">Title</span>
+                <span class="info-value text-gradient" style="font-weight:600">AI Generalist / ERP Integration Architect</span>
+              </li>
+              <li class="info-item">
+                <span class="info-label">Contact Email</span>
+                <span class="info-value">Somesh.hanumantholla@gmail.com</span>
+              </li>
+              <li class="info-item">
+                <span class="info-label">Phone Contact</span>
+                <span class="info-value">+971 541624002</span>
+              </li>
+              <li class="info-item">
+                <span class="info-label">Core Specialization</span>
+                <span class="info-value">Oracle Cloud, OIC, EBS SCM & Finance, AI Automation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Professional Skillset</h2>
+        <p class="subtitle">Detailed breakdown of my technical, architectural, and cognitive toolset.</p>
+        
+        <div class="skills-grid">
+          <!-- AI & Modern Tech -->
+          <div class="skill-category glass">
+            <h3>AI Generalist & Automation</h3>
+            <div class="skill-bars">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">LLM Integration & ERP Copilots</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Prompt Engineering & RAG Workflows</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Autonomous Workflow Orchestration</span>
+                  <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="88"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Oracle Cloud -->
+          <div class="skill-category glass">
+            <h3>Oracle Cloud & Integrations</h3>
+            <div class="skill-bars">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Oracle Integration Cloud (OIC)</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="95"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">FBDI Loaders, VBCS & Redwood Pages</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">BIP Reports, OTBI Dashboards & bursting</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="92"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ERP Development -->
+          <div class="skill-category glass">
+            <h3>ERP Development & Databases</h3>
+            <div class="skill-bars">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SQL, PL/SQL & Performance Tuning</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="95"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">OA Framework (OAF) & ADF Components</span>
+                  <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="88"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SOAP/REST APIs & ISG Services</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar-bg"><div class="skill-bar-fill" data-level="90"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE (WITHOUT COMPANY NAMES) -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="subtitle">Chronological history of my ERP consulting and AI generalist achievements (company names omitted).</p>
+        
+        <div class="timeline">
+          <!-- Role 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Lead Oracle OIC & Cloud SCM consultant / AI Automation Generalist</h3>
+                  <span class="timeline-company">Enterprise Solutions Provider</span>
+                </div>
+                <span class="timeline-period">Aug 2024 - Apr 2026</span>
+              </div>
+              <p class="timeline-desc">Served as the lead integration and implementation architect focusing on Quality modules, Redwood migrations, and AI workflow automation integrations.</p>
+              <ul class="timeline-bullets">
+                <li>Drove Redwood migration for Quality modules, enabling responsive and unified interfaces across ERP SaaS platforms.</li>
+                <li>Created custom automated integration bridges in OIC, utilizing REST web services to trigger bulk file loads, data extractions, and downstream systems synchronization.</li>
+                <li>Orchestrated custom OTBI dashboards and BIP reporting templates with bursting options to automate scheduled stakeholder notifications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Technical Lead & SME - Oracle EBS SCM, Oracle Cloud SCM & OIC</h3>
+                  <span class="timeline-company">Global Systems Integrator</span>
+                </div>
+                <span class="timeline-period">Oct 2022 - Jul 2024</span>
+              </div>
+              <p class="timeline-desc">Led technical enhancements, upgrades, and integrations linking legacy on-premise components with modern Oracle SaaS.</p>
+              <ul class="timeline-bullets">
+                <li>Engineered custom payment file extraction routines, connecting ERP AP Cloud streams directly with Core Banking APIs.</li>
+                <li>Designed daily FBDI loaders in OIC to automate journal postings from peripheral banking ledgers directly to Cloud General Ledger.</li>
+                <li>Developed inbound/outbound REST web services using Integrated SOA Gateway (ISG) on EBS R12.2 environments.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Oracle EBS Support & Procurement Consultant</h3>
+                  <span class="timeline-company">Information Technology Services Group</span>
+                </div>
+                <span class="timeline-period">Dec 2021 - Oct 2022</span>
+              </div>
+              <p class="timeline-desc">Supported EBS R12.1 SCM and Financial systems. Managed supplier registration and portals customization.</p>
+              <ul class="timeline-bullets">
+                <li>Customized iSupplier portals, vendor validation modules, and supplier registration workflows using OA Framework (OAF).</li>
+                <li>Configured and published custom XML reports and invoice workbenches integrated with legacy tracking databases.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Enterprise ERP Integration Architect</h3>
+                  <span class="timeline-company">Logistics & Supply Chain Leader</span>
+                </div>
+                <span class="timeline-period">Oct 2019 - May 2021</span>
+              </div>
+              <p class="timeline-desc">Built custom interfaces linking on-premise databases with Finance Cloud applications using connectivity agents.</p>
+              <ul class="timeline-bullets">
+                <li>Engineered reconciliation reports drilling down from AP/AR sub-ledgers directly to General Ledger balances.</li>
+                <li>Designed alerts, custom workflows, and automated email escalations for pending transaction approvals.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Senior Oracle EBS Technical Consultant</h3>
+                  <span class="timeline-company">Consultancy Firm</span>
+                </div>
+                <span class="timeline-period">Aug 2018 - Oct 2019</span>
+              </div>
+              <p class="timeline-desc">Configured Global Oracle EBS Financial systems and handled data migrations.</p>
+              <ul class="timeline-bullets">
+                <li>Designed 17 custom migration pipelines transferring critical HR assets to Fusion HCM via standard File Based Loaders (FBL).</li>
+                <li>Utilized OAF to extend self-service portal functionality and link database inputs with external payroll vendor systems.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Senior Oracle EBS Financials Consultant</h3>
+                  <span class="timeline-company">Corporate Engineering Partner</span>
+                </div>
+                <span class="timeline-period">Dec 2017 - Aug 2018</span>
+              </div>
+              <p class="timeline-desc">Managed EBS customization, configured lookup views (LOVs), and button event handling routes inside JDeveloper.</p>
+            </div>
+          </div>
+
+          <!-- Role 7 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Associate Consultant - EBS & OAF Development</h3>
+                  <span class="timeline-company">Software Solutions Agency</span>
+                </div>
+                <span class="timeline-period">Aug 2015 - Dec 2017</span>
+              </div>
+              <p class="timeline-desc">Developed production planners and warehouse operations screens inside Oracle EBS using OAF and workflow triggers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SHOWCASE -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Key Projects</h2>
+        <p class="subtitle">A brief overview of enterprise integration templates and AI implementations.</p>
+        
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card glass">
+            <div class="project-img-wrapper">
+              <img class="project-img" src="assets/project_aether.jpg" alt="AI ERP Copilot" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80'">
+              <div class="project-overlay">
+                <span class="project-category">AI Automation</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">AI-Powered ERP Assistant</h3>
+              <p class="project-desc">An automated chatbot interface integrated with database layers to answer queries, fetch supplier metrics, and summarize AP statuses.</p>
+              <div class="project-tags">
+                <span class="project-tag">OpenAI API</span>
+                <span class="project-tag">OIC</span>
+                <span class="project-tag">VBCS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card glass">
+            <div class="project-img-wrapper">
+              <img class="project-img" src="assets/project_zenith.jpg" alt="FBDI Loader Automation" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80'">
+              <div class="project-overlay">
+                <span class="project-category">ERP Integration</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">FBDI Automation Pipeline</h3>
+              <p class="project-desc">A scheduled OIC workflow that grabs ledger feeds, maps payloads dynamically to custom FBDI templates, and loads GL records into Fusion.</p>
+              <div class="project-tags">
+                <span class="project-tag">OIC</span>
+                <span class="project-tag">SOAP</span>
+                <span class="project-tag">XML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card glass">
+            <div class="project-img-wrapper">
+              <img class="project-img" src="assets/project_vortex.jpg" alt="OAF Customization" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80'">
+              <div class="project-overlay">
+                <span class="project-category">Custom ERP Portal</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Warehouse Management Portal</h3>
+              <p class="project-desc">An interactive OAF page developed using JDeveloper to perform daily warehouse audits and track production details live.</p>
+              <div class="project-tags">
+                <span class="project-tag">OAF</span>
+                <span class="project-tag">Java</span>
+                <span class="project-tag">PL/SQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="subtitle">Have a project or integration need in mind? Get in touch!</p>
+        
+        <div class="contact-wrapper">
+          <div class="contact-info-card glass">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Email Me</span>
+                <div class="contact-val">Somesh.hanumantholla@gmail.com</div>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Phone Contact</span>
+                <div class="contact-val">+971 541624002</div>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Certifications</span>
+                <div class="contact-val" style="font-size: 0.95rem;">Oracle OIC (1Z0-1042-22) &amp; Analytics (1Z0-1041-22) Professional</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card glass">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-msg">Message</label>
+                <textarea id="contact-msg" class="form-input" placeholder="Hi Somesh, I would love to talk about..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-sec">
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> Somesh Hanumantholla. Hostable Free Simple HTML Application.</p>
+    </div>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-card glass">
+      <button id="modal-close" class="modal-close" aria-label="Close Modal">&times;</button>
+      
+      <!-- Primary forms screen -->
+      <div id="auth-forms-container">
+        <!-- Login Section -->
+        <div id="modal-section-login">
+          <div class="modal-header">
+            <h2>Welcome Back</h2>
+            <p>Sign in using social profiles or credentials</p>
+          </div>
+
+          <div class="social-auth-buttons">
+            <button class="btn btn-oauth btn-google" data-provider="google">
+              <svg viewBox="0 0 24 24"><path d="M12.24 10.285V13.4h6.887c-.648 2.41-2.519 4.13-5.136 4.13A5.85 5.85 0 018.1 11.7c0-3.217 2.613-5.83 5.89-5.83 1.488 0 2.845.54 3.901 1.43l2.361-2.36C18.678 3.4 16.484 2.5 13.99 2.5a9.23 9.23 0 00-9.24 9.2c0 5.08 4.13 9.2 9.24 9.2 5.337 0 9.176-3.75 9.176-9.33 0-.63-.056-1.22-.162-1.785H12.24z"/></svg>
+              Continue with Google
+            </button>
+            <button class="btn btn-oauth btn-linkedin" data-provider="linkedin">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7h2.8M6.5 8.37a1.37 1.37 0 1 0 0-2.75 1.37 1.37 0 0 0 0 2.75M8 18.5V10.13H5.2v8.37H8z"/></svg>
+              Continue with LinkedIn
+            </button>
+            <button class="btn btn-oauth btn-facebook" data-provider="facebook">
+              <svg viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2V2h-3a4 4 0 0 0-4 4v2z"/></svg>
+              Continue with Facebook
+            </button>
+          </div>
+
+          <div class="divider">or use credentials</div>
+
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <input type="email" id="login-email" class="form-input" placeholder="somesh.erp@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" class="form-input" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Sign In</button>
+          </form>
+
+          <p class="modal-toggle-text">New to this? <span id="toggle-to-signup">Create account</span></p>
+        </div>
+
+        <!-- Signup Section -->
+        <div id="modal-section-signup" style="display: none;">
+          <div class="modal-header">
+            <h2>Create Account</h2>
+            <p>Register a demo user account</p>
+          </div>
+
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" class="form-input" placeholder="Somesh Hanumantholla" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" class="form-input" placeholder="somesh.erp@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Choose Password</label>
+              <input type="password" id="signup-password" class="form-input" placeholder="Min. 6 characters" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Sign Up</button>
+          </form>
+
+          <p class="modal-toggle-text">Already registered? <span id="toggle-to-login">Log In</span></p>
+        </div>
+      </div>
+
+      <!-- IN-PAGE SIMULATED OAUTH REDIRECT SCREEN -->
+      <div id="oauth-simulator-screen" class="simulated-oauth-screen">
+        <div id="oauth-logo" class="oauth-logo-circle">
+          <!-- Branded SVG loaded dynamically -->
+        </div>
+        <h3 id="oauth-status-title" style="font-size: 1.4rem; margin-bottom: 8px;">Connecting...</h3>
+        <p id="oauth-status-subtitle" style="font-size: 0.9rem; color: var(--text-secondary);">Requesting secure token approval</p>
+        <div class="oauth-spinner"></div>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Please do not close this window</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT SCRIPT BLOCK -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* ----------------------------------------------------
+         STATE & CONFIG
+         ---------------------------------------------------- */
+      let currentUser = JSON.parse(localStorage.getItem("portfolio_user")) || null;
+      const savedTheme = localStorage.getItem("portfolio_theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.getElementById("footer-year").innerText = new Date().getFullYear();
+
+      // Titles for Typewriter effect
+      const heroTitles = [
+        "AI Generalist",
+        "Oracle Cloud Integration Architect",
+        "ERP Technical Consultant",
+        "Enterprise Automation Engineer"
+      ];
+
+      /* ----------------------------------------------------
+         DOM ELEMENTS
+         ---------------------------------------------------- */
+      const themeToggle = document.getElementById("theme-toggle");
+      const navLoginBtn = document.getElementById("nav-login-btn");
+      const userMenu = document.getElementById("user-profile-menu");
+      const userDropdown = document.getElementById("user-dropdown");
+      const dropdownLogout = document.getElementById("dropdown-logout");
+      
+      const loginModal = document.getElementById("login-modal");
+      const modalClose = document.getElementById("modal-close");
+      
+      const authFormsContainer = document.getElementById("auth-forms-container");
+      const loginSection = document.getElementById("modal-section-login");
+      const signupSection = document.getElementById("modal-section-signup");
+      const toggleToSignup = document.getElementById("toggle-to-signup");
+      const toggleToLogin = document.getElementById("toggle-to-login");
+      
+      const loginForm = document.getElementById("login-form");
+      const signupForm = document.getElementById("signup-form");
+      
+      const oauthSimulatorScreen = document.getElementById("oauth-simulator-screen");
+      const oauthLogo = document.getElementById("oauth-logo");
+      const oauthStatusTitle = document.getElementById("oauth-status-title");
+      const oauthStatusSubtitle = document.getElementById("oauth-status-subtitle");
+
+      const contactForm = document.getElementById("contact-form");
+      const toastContainer = document.getElementById("toast-container");
+
+      /* ----------------------------------------------------
+         THEME & SCROLL CONTROLLERS
+         ---------------------------------------------------- */
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const nextTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("portfolio_theme", nextTheme);
+        showToast(`Switched to ${nextTheme} mode!`, "success");
+      });
+
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header-nav");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      /* ----------------------------------------------------
+         TOAST SYSTEM
+         ---------------------------------------------------- */
+      function showToast(message, type = "success") {
+        if (!toastContainer) return;
+        const toast = document.createElement("div");
+        toast.className = `toast glass ${type}`;
+        
+        const icon = type === "success" 
+          ? `<svg width="18" height="18" fill="#10b981" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>` 
+          : `<svg width="18" height="18" fill="#ef4444" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>`;
+
+        toast.innerHTML = `${icon} <span>${message}</span>`;
+        toastContainer.appendChild(toast);
+
+        setTimeout(() => {
+          toast.classList.add("removing");
+          toast.addEventListener("animationend", () => toast.remove());
+        }, 4000);
+      }
+
+      /* ----------------------------------------------------
+         TYPEWRITER EFFECT
+         ---------------------------------------------------- */
+      function initTypewriter(element, words) {
+        let wordIndex = 0;
+        let txt = '';
+        let isDeleting = false;
+        
+        function type() {
+          const currentWord = words[wordIndex];
+          if (isDeleting) {
+            txt = currentWord.substring(0, txt.length - 1);
+          } else {
+            txt = currentWord.substring(0, txt.length + 1);
+          }
+          
+          element.innerHTML = `${txt}<span class="typewriter-cursor"></span>`;
+          
+          let typeSpeed = 100;
+          if (isDeleting) typeSpeed /= 2;
+          
+          if (!isDeleting && txt === currentWord) {
+            typeSpeed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && txt === '') {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typeSpeed = 500;
+          }
+          
+          setTimeout(type, typeSpeed);
+        }
+        type();
+      }
+
+      const typewriterEl = document.getElementById("hero-title-typed");
+      if (typewriterEl) {
+        initTypewriter(typewriterEl, heroTitles);
+      }
+
+      /* ----------------------------------------------------
+         SKILLS OBSERVER ANIMATION
+         ---------------------------------------------------- */
+      const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const fills = document.querySelectorAll(".skill-bar-fill");
+            fills.forEach(fill => {
+              const val = fill.getAttribute("data-level");
+              setTimeout(() => { fill.style.width = `${val}%`; }, 100);
+            });
+            skillsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const skillsSec = document.getElementById("skills");
+      if (skillsSec) skillsObserver.observe(skillsSec);
+
+      /* ----------------------------------------------------
+         USER AUTHENTICATION LOGIC
+         ---------------------------------------------------- */
+      function syncUserUI() {
+        if (currentUser) {
+          navLoginBtn.style.display = "none";
+          userMenu.style.display = "block";
+          
+          const avatarUrl = currentUser.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80';
+          userMenu.querySelector(".user-profile-trigger").innerHTML = `
+            <img class="user-avatar" src="${avatarUrl}" alt="Avatar">
+            <span>${currentUser.name}</span>
+          `;
+        } else {
+          navLoginBtn.style.display = "inline-flex";
+          userMenu.style.display = "none";
+        }
+      }
+
+      // Modal open controls
+      navLoginBtn.addEventListener("click", () => {
+        loginModal.classList.add("active");
+        showFormTab("login");
+      });
+
+      userMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        userDropdown.classList.toggle("active");
+      });
+
+      window.addEventListener("click", () => {
+        userDropdown.classList.remove("active");
+      });
+
+      modalClose.addEventListener("click", () => {
+        loginModal.classList.remove("active");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === loginModal) loginModal.classList.remove("active");
+      });
+
+      function showFormTab(tab) {
+        authFormsContainer.style.display = "block";
+        oauthSimulatorScreen.style.display = "none";
+        if (tab === "login") {
+          loginSection.style.display = "block";
+          signupSection.style.display = "none";
+        } else {
+          loginSection.style.display = "none";
+          signupSection.style.display = "block";
+        }
+      }
+
+      toggleToSignup.addEventListener("click", () => showFormTab("signup"));
+      toggleToLogin.addEventListener("click", () => showFormTab("login"));
+
+      // Standard Credentials Forms
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("login-email").value;
+        const pass = document.getElementById("login-password").value;
+
+        if (!email.includes('@') || pass.length < 5) {
+          showToast("Invalid credentials. Use a valid email and 5+ char password.", "error");
+          return;
+        }
+
+        const nameLabel = email.split('@')[0].toUpperCase();
+        currentUser = {
+          name: nameLabel,
+          email: email,
+          avatar: null,
+          provider: "credentials"
+        };
+        localStorage.setItem("portfolio_user", JSON.stringify(currentUser));
+        showToast(`Welcome back, ${nameLabel}!`, "success");
+        loginModal.classList.remove("active");
+        syncUserUI();
+        loginForm.reset();
+      });
+
+      signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("signup-name").value;
+        const email = document.getElementById("signup-email").value;
+        const pass = document.getElementById("signup-password").value;
+
+        if (pass.length < 6) {
+          showToast("Password must be at least 6 characters.", "error");
+          return;
+        }
+
+        currentUser = {
+          name: name,
+          email: email,
+          avatar: null,
+          provider: "credentials"
+        };
+        localStorage.setItem("portfolio_user", JSON.stringify(currentUser));
+        showToast(`Account successfully registered! Hello, ${name}!`, "success");
+        loginModal.classList.remove("active");
+        syncUserUI();
+        signupForm.reset();
+      });
+
+      // Sign Out
+      dropdownLogout.addEventListener("click", () => {
+        currentUser = null;
+        localStorage.removeItem("portfolio_user");
+        showToast("Signed out successfully.", "success");
+        syncUserUI();
+      });
+
+      // OAuth Simulation Trigger
+      const googleSvg = `<svg viewBox="0 0 24 24"><path d="M12.24 10.285V13.4h6.887c-.648 2.41-2.519 4.13-5.136 4.13A5.85 5.85 0 018.1 11.7c0-3.217 2.613-5.83 5.89-5.83 1.488 0 2.845.54 3.901 1.43l2.361-2.36C18.678 3.4 16.484 2.5 13.99 2.5a9.23 9.23 0 00-9.24 9.2c0 5.08 4.13 9.2 9.24 9.2 5.337 0 9.176-3.75 9.176-9.33 0-.63-.056-1.22-.162-1.785H12.24z"/></svg>`;
+      const linkedinSvg = `<svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.8v8.37h2.8v-4.67c0-.25.02-.5.1-.68a1.14 1.14 0 0 1 1-.77c.76 0 1 .58 1 1.42v4.7h2.8M6.5 8.37a1.37 1.37 0 1 0 0-2.75 1.37 1.37 0 0 0 0 2.75M8 18.5V10.13H5.2v8.37H8z"/></svg>`;
+      const facebookSvg = `<svg viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h4v-9h3.6l.4-3H13V6c0-.5.5-1 1-1h2V2h-3a4 4 0 0 0-4 4v2z"/></svg>`;
+
+      const oauthButtons = document.querySelectorAll(".btn-oauth");
+      oauthButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const provider = btn.getAttribute("data-provider");
+          
+          // Switch to simulation interface
+          authFormsContainer.style.display = "none";
+          oauthSimulatorScreen.style.display = "flex";
+          
+          // Configure branding
+          let name = "";
+          let email = "";
+          let avatar = "";
+          let logoSvg = "";
+          let bgColor = "";
+          
+          if (provider === "google") {
+            name = "Somesh Hanumantholla (Google)";
+            email = "somesh.hanumantholla.dev@gmail.com";
+            avatar = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80";
+            logoSvg = googleSvg;
+            bgColor = "var(--btn-google)";
+          } else if (provider === "linkedin") {
+            name = "Somesh Hanumantholla (LinkedIn)";
+            email = "somesh.hanumantholla@linkedin.com";
+            avatar = "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80";
+            logoSvg = linkedinSvg;
+            bgColor = "var(--btn-linkedin)";
+          } else {
+            name = "Somesh H (Facebook)";
+            email = "somesh.facebook@gmail.com";
+            avatar = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80";
+            logoSvg = facebookSvg;
+            bgColor = "var(--btn-facebook)";
+          }
+          
+          oauthLogo.style.backgroundColor = bgColor;
+          oauthLogo.innerHTML = logoSvg;
+          oauthStatusTitle.innerText = `Connecting via ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`;
+          oauthStatusSubtitle.innerText = `Authorizing credentials for ${email}`;
+
+          // Delay for network response animation
+          setTimeout(() => {
+            currentUser = { name, email, avatar, provider };
+            localStorage.setItem("portfolio_user", JSON.stringify(currentUser));
+            showToast(`Logged in successfully with ${provider.toUpperCase()} as ${name}!`, "success");
+            loginModal.classList.remove("active");
+            syncUserUI();
+          }, 2000);
+        });
+      });
+
+      /* ----------------------------------------------------
+         CONTACT FORM RESPONSE
+         ---------------------------------------------------- */
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const submitBtn = contactForm.querySelector("button[type='submit']");
+        submitBtn.innerText = "Transmitting Message...";
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          showToast("Thank you Somesh! Your inquiry was successfully received.", "success");
+          contactForm.reset();
+          submitBtn.innerText = "Send Message";
+          submitBtn.disabled = false;
+        }, 1500);
+      });
+
+      // Initialize
+      syncUserUI();
+    });
+  </script>
+</body>
+</html>
