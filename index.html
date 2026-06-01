@@ -1702,18 +1702,25 @@
           </div>
 
           <div class="contact-form-card glass">
-            <form id="contact-form">
+            <form id="contact-form" action="https://formsubmit.co/Somesh.hanumantholla@gmail.com" method="POST">
+              <!-- Honeypot anti-spam field -->
+              <input type="text" name="_honey" style="display:none">
+              <!-- Disable captcha check -->
+              <input type="hidden" name="_captcha" value="false">
+              <!-- Custom subject line -->
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
+              
               <div class="form-group">
                 <label for="contact-name">Full Name</label>
-                <input type="text" id="contact-name" class="form-input" placeholder="Your Name" required>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your Name" required>
               </div>
               <div class="form-group">
                 <label for="contact-email">Email Address</label>
-                <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="name@company.com" required>
               </div>
               <div class="form-group">
                 <label for="contact-msg">Message</label>
-                <textarea id="contact-msg" class="form-input" placeholder="Hi Somesh, I would love to talk about..." required></textarea>
+                <textarea id="contact-msg" name="message" class="form-input" placeholder="Hi Somesh, I would love to talk about..." required></textarea>
               </div>
               <button type="submit" class="btn btn-primary" style="width: 100%">Send Message</button>
             </form>
@@ -2136,49 +2143,6 @@
         });
       });
 
-      /* ----------------------------------------------------
-         CONTACT FORM RESPONSE
-         ---------------------------------------------------- */
-      contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const submitBtn = contactForm.querySelector("button[type='submit']");
-        
-        const name = document.getElementById("contact-name").value;
-        const email = document.getElementById("contact-email").value;
-        const message = document.getElementById("contact-msg").value;
-        
-        submitBtn.innerText = "Transmitting Message...";
-        submitBtn.disabled = true;
-
-        fetch("https://formsubmit.co/ajax/Somesh.hanumantholla@gmail.com", {
-          method: "POST",
-          headers: { 
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            message: message
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success === "true" || data.success === true) {
-            showToast("Message sent! Note: Please check your email inbox to activate FormSubmit for first-time use.", "success");
-            contactForm.reset();
-          } else {
-            showToast("Failed to transmit message. Please try again.", "error");
-          }
-        })
-        .catch(err => {
-          showToast("Network error. Could not connect to form server.", "error");
-        })
-        .finally(() => {
-          submitBtn.innerText = "Send Message";
-          submitBtn.disabled = false;
-        });
-      });
 
       // Initialize
       syncUserUI();
