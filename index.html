@@ -1702,14 +1702,7 @@
           </div>
 
           <div class="contact-form-card glass">
-            <form id="contact-form" action="https://formsubmit.co/Somesh.hanumantholla@gmail.com" method="POST">
-              <!-- Honeypot anti-spam field -->
-              <input type="text" name="_honey" style="display:none">
-              <!-- Disable captcha check -->
-              <input type="hidden" name="_captcha" value="false">
-              <!-- Custom subject line -->
-              <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
-              
+            <form id="contact-form">
               <div class="form-group">
                 <label for="contact-name">Full Name</label>
                 <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your Name" required>
@@ -2143,6 +2136,28 @@
         });
       });
 
+      /* ----------------------------------------------------
+         CONTACT FORM MAILTO ROUTING
+         ---------------------------------------------------- */
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
+        const message = document.getElementById("contact-msg").value;
+        
+        const subject = `Portfolio Contact Message from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        // Construct standard mailto link
+        const mailtoUrl = `mailto:Somesh.hanumantholla@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open default mail application
+        window.location.href = mailtoUrl;
+        
+        showToast("Opening default mail application to send...", "success");
+        contactForm.reset();
+      });
 
       // Initialize
       syncUserUI();
