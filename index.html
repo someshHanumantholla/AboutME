@@ -2142,15 +2142,42 @@
       contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const submitBtn = contactForm.querySelector("button[type='submit']");
+        
+        const name = document.getElementById("contact-name").value;
+        const email = document.getElementById("contact-email").value;
+        const message = document.getElementById("contact-msg").value;
+        
         submitBtn.innerText = "Transmitting Message...";
         submitBtn.disabled = true;
 
-        setTimeout(() => {
-          showToast("Thank you Somesh! Your inquiry was successfully received.", "success");
-          contactForm.reset();
+        fetch("https://formsubmit.co/ajax/Somesh.hanumantholla@gmail.com", {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success === "true" || data.success === true) {
+            showToast("Message sent! Note: Please check your email inbox to activate FormSubmit for first-time use.", "success");
+            contactForm.reset();
+          } else {
+            showToast("Failed to transmit message. Please try again.", "error");
+          }
+        })
+        .catch(err => {
+          showToast("Network error. Could not connect to form server.", "error");
+        })
+        .finally(() => {
           submitBtn.innerText = "Send Message";
           submitBtn.disabled = false;
-        }, 1500);
+        });
       });
 
       // Initialize
