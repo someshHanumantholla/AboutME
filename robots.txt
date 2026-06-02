@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://someshhanumantholla.github.io/AboutME/sitemap.xml
