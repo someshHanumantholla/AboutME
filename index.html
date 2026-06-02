@@ -3,9 +3,9 @@
 <head>
   <script>
     (function() {
-      const localTheme = localStorage.getItem("portfolio_theme");
-      if (localTheme) {
-        document.documentElement.setAttribute("data-theme", localTheme);
+      const sessionTheme = sessionStorage.getItem("portfolio_theme");
+      if (sessionTheme) {
+        document.documentElement.setAttribute("data-theme", sessionTheme);
       } else {
         const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         document.documentElement.setAttribute("data-theme", systemTheme);
@@ -1835,11 +1835,10 @@
          STATE & CONFIG
          ---------------------------------------------------- */
       let currentUser = JSON.parse(localStorage.getItem("portfolio_user")) || null;
-      // Listen for system theme changes dynamically if no manual preference is saved
+      // Listen for system theme changes dynamically and always align to them
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-        if (!localStorage.getItem("portfolio_theme")) {
-          document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
-        }
+        document.documentElement.setAttribute("data-theme", e.matches ? "dark" : "light");
+        sessionStorage.removeItem("portfolio_theme");
       });
       document.getElementById("footer-year").innerText = new Date().getFullYear();
 
@@ -1887,7 +1886,7 @@
         const currentTheme = document.documentElement.getAttribute("data-theme");
         const nextTheme = currentTheme === "dark" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", nextTheme);
-        localStorage.setItem("portfolio_theme", nextTheme);
+        sessionStorage.setItem("portfolio_theme", nextTheme);
         showToast(`Switched to ${nextTheme} mode!`, "success");
       });
 
