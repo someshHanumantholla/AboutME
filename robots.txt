@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://someshhanumantholla.github.io/AboutME/sitemap.xml
 Sitemap: https://someshhanumantholla.github.io/AboutME/sitemap_index.xml
+
